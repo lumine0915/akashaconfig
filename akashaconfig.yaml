@@ -129,8 +129,6 @@ rules:
   - RULE-SET,microsoft_domain,Microsoft
   - RULE-SET,applecn_domain,DIRECT
   - RULE-SET,apple_domain,Apple
-  - RULE-SET,steamcn_domain,DIRECT
-  - RULE-SET,steam_domain,Steam
   - RULE-SET,tiktok_domain,TikTok
   - RULE-SET,telegram_domain,Telegram
   - RULE-SET,netflix_domain,NETFLIX
@@ -138,11 +136,13 @@ rules:
   - RULE-SET,binance_domain,Wallet
   - RULE-SET,okx_domain,Wallet
   - RULE-SET,usd_domain,Wallet
-  - RULE-SET,apple_ip,Apple
+  - RULE-SET,steamcn_domain,DIRECT
+  - RULE-SET,steam_domain,Steam
+  - RULE-SET,geolocation-!cn,默认代理
   - RULE-SET,google_ip,Google
+  - RULE-SET,apple_ip,Apple
   - RULE-SET,netflix_ip,NETFLIX
   - RULE-SET,telegram_ip,Telegram
-  - RULE-SET,geolocation-!cn,默认代理
   - RULE-SET,cn_domain,DIRECT
   - RULE-SET,cn_ip,DIRECT
   - MATCH,漏网之鱼
