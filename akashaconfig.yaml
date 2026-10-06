@@ -146,7 +146,7 @@ rules:
   - RULE-SET,apple_ip,Apple,no-resolve
   - RULE-SET,netflix_ip,NETFLIX,no-resolve
   - RULE-SET,telegram_ip,Telegram,no-resolve
-  - RULE-SET,cn_ip,DIRECT
+  - RULE-SET,cn_ip,DIRECT,no-resolve
 
   - MATCH,漏网之鱼
 
