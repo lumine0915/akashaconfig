@@ -44,10 +44,10 @@ profile:
   store-fake-ip: true
 
 # 外部控制面板。跑裸核请取消注释。
-#external-controller: 0.0.0.0:9090
-#secret: ""
-#external-ui: ui
-#external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+# external-controller: 0.0.0.0:9090
+# secret: ""
+# external-ui: ui
+# external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 
 # 嗅探
 sniffer:
