@@ -1,3 +1,5 @@
+# 虚空终端配置 by Lumine
+
 # 锚点
 ## 节点相关
 as_url-test: &as_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
