@@ -142,11 +142,11 @@ rules:
   - RULE-SET,geolocation-!cn,默认代理
   - RULE-SET,cn_domain,DIRECT
 
-  - RULE-SET,google_ip,Google,no-resolve
-  - RULE-SET,apple_ip,Apple,no-resolve
-  - RULE-SET,netflix_ip,NETFLIX,no-resolve
-  - RULE-SET,telegram_ip,Telegram,no-resolve
-  - RULE-SET,cn_ip,DIRECT,no-resolve
+  - RULE-SET,google_ip,Google
+  - RULE-SET,apple_ip,Apple
+  - RULE-SET,netflix_ip,NETFLIX
+  - RULE-SET,telegram_ip,Telegram
+  - RULE-SET,cn_ip,DIRECT
 
   - MATCH,漏网之鱼
 
