@@ -10,10 +10,11 @@ as_auto: &as_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台�
 as_select: &as_select [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
 as_media: &as_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 
-# 机场订阅
+# 代理订阅
+# 请将下方的ProviderURL替换为自己的订阅链接
 proxy-providers:
   provider1:
-    url: "订阅url"
+    url: "ProviderURL"
     type: http
     interval: 86400
     health-check:
