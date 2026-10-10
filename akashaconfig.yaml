@@ -87,6 +87,10 @@ dns:
   fake-ip-filter:
     - "rule-set:fakeip-filter"
     - "rule-set:private_domain"
+    - "rule-set:cn_domain"
+    - "rule-set:microsoftcn_domain"
+    - "rule-set:applecn_domain"
+    - "rule-set:steamcn_domain"
   default-nameserver:
     - 119.29.29.29
     - 223.5.5.5
