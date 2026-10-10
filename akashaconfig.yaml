@@ -55,6 +55,7 @@ external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/downloa
 # 嗅探
 sniffer:
   enable: true
+  parse-pure-ip: true
   sniff:
     HTTP:
       ports: [80, 8080-8880]
