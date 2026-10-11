@@ -10,7 +10,7 @@ as_auto: &as_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台�
 as_manual: &as_manual [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
 as_media: &as_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 
-as_defaultDNS: &as_defaultDNS ['119.29.29.29', '223.5.5.5']
+as_defaultDNS: &as_defaultDNS ['1.12.12.12', '223.5.5.5']
 as_chinaDNS: &as_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
 as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
 
@@ -112,7 +112,7 @@ dns:
   direct-nameserver-follow-policy: true
 
 hosts:
-  'doh.pub': ['119.29.29.29', '120.53.53.53']
+  'doh.pub': ['1.12.12.12', '120.53.53.53']
   'cloudflare-dns.com': ['1.1.1.1', '1.0.0.1']
   'dns.google': ['8.8.8.8', '8.8.4.4']
 
