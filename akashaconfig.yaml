@@ -101,7 +101,10 @@ dns:
   default-nameserver: *as_defaultDNS
   nameserver-policy:
     'rule-set:private_domain': 'system'
-    'rule-set:cn_domain,microsoftcn_domain,applecn_domain,steamcn_domain': *as_chinaDNS
+    'rule-set:cn_domain': *as_chinaDNS
+    'rule-set:microsoftcn_domain': *as_chinaDNS
+    'rule-set:applecn_domain': *as_chinaDNS
+    'rule-set:steamcn_domain': *as_chinaDNS
   nameserver: *as_foreignDNS
   proxy-server-nameserver: *as_chinaDNS
   direct-nameserver: *as_chinaDNS
