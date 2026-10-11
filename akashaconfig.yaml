@@ -9,6 +9,10 @@ as_auto: &as_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台�
 as_select: &as_select [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
 as_media: &as_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 
+as_defaultDNS: &as_defaultDNS ['119.29.29.29', '223.5.5.5']
+as_chinaDNS: &as_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
+
 # 代理订阅
 proxy-providers:
   provider1:
@@ -81,23 +85,35 @@ tun:
 dns:
   enable: true
   cache-algorithm: arc
+  use-hosts: true
+  use-system-hosts: true
   ipv6: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:fakeip-filter"
     - "rule-set:private_domain"
+    - "rule-set:fakeip-filter"
     - "rule-set:cn_domain"
     - "rule-set:microsoftcn_domain"
     - "rule-set:applecn_domain"
     - "rule-set:steamcn_domain"
-  default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+  default-nameserver: *as_defaultDNS
+  nameserver-policy:
+    'rule-set:private_domain': 'system'
+    'rule-set:cn_domain,microsoftcn_domain,applecn_domain,steamcn_domain': *as_chinaDNS
+  nameserver: *as_foreignDNS
+  proxy-server-nameserver: *as_chinaDNS
+  direct-nameserver: *as_chinaDNS
+  direct-nameserver-follow-policy: true
+
+hosts:
+  'doh.pub': ['119.29.29.29', '120.53.53.53']
+  'cloudflare-dns.com': ['1.1.1.1', '1.0.0.1']
+  'dns.google': ['8.8.8.8', '8.8.4.4']
+
+  # 解决谷歌商店无法下载的问题
+  'services.googleapis.cn': 'services.googleapis.com'
 
 # 出站策略
 proxy-groups:
