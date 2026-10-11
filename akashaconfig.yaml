@@ -3,6 +3,7 @@
 
 # 锚点
 as_url-test: &as_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
+as_select: &as_select {type: select, include-all: true, exclude-type: direct, empty-fallback: REJECT}
 
 as_oversea: &as_oversea [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 as_auto: &as_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
@@ -141,7 +142,7 @@ proxy-groups:
   - {name: 日本节点, <<: *as_url-test, filter: "(?i)(日|jp|japan)"}
   - {name: 狮城节点, <<: *as_url-test, filter: "(?i)(新|sg|singapore)"}
   - {name: 美国节点, <<: *as_url-test, filter: "(?i)(美|us|unitedstates|united states)"}
-  - {name: 全球手动, type: select, include-all: true, exclude-type: direct, empty-fallback: REJECT}
+  - {name: 全球手动, <<: *as_select}
 
 # 规则匹配
 rules:
