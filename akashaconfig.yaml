@@ -148,7 +148,6 @@ rules:
   - RULE-SET,steamcn_domain,DIRECT
   - RULE-SET,steam_domain,Steam
   - RULE-SET,geolocation-!cn,默认代理
-  - RULE-SET,cn_domain,DIRECT
 
   - RULE-SET,google_ip,Google
   - RULE-SET,apple_ip,Apple
