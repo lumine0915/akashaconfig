@@ -17,8 +17,18 @@ as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代�
 
 # 代理订阅
 proxy-providers:
-  Provider1: {<<: *as_provider, url: "ProviderURL", override: {additional-prefix: '[P1] '}}
-  # Provider2: {<<: *as_provider, url: "ProviderURL", override: {additional-prefix: '[P2] '}}
+  Provider1:
+    <<: *as_provider
+    url: "ProviderURL"
+    override:
+      additional-prefix: '[P1] '
+
+  # 添加多个订阅请确保名称不要重复, 并修改 additional-prefix 以确保节点不重名
+  # Provider2:
+  #   <<: *as_provider
+  #   url: "ProviderURL"
+  #   override:
+  #     additional-prefix: '[P2] '
 
 # 自定义代理节点
 proxies:
