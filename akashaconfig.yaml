@@ -2,6 +2,7 @@
 # 请在 proxy-providers 中添加订阅链接, 或在 proxies 中添加自定义节点
 
 # 锚点
+as_provider: &as_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 300}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
 as_url-test: &as_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 as_select: &as_select {type: select, include-all: true, exclude-type: direct, empty-fallback: REJECT}
 
@@ -16,16 +17,8 @@ as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代�
 
 # 代理订阅
 proxy-providers:
-  provider1:
-    url: "ProviderURL"
-    type: http
-    interval: 86400
-    proxy: DIRECT
-    health-check:
-      enable: true
-      url: "https://www.gstatic.com/generate_204"
-      interval: 300
-    filter: "^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))"
+  Provider1: {<<: *as_provider, url: "ProviderURL", override: {additional-prefix: '[P1] '}}
+  # Provider2: {<<: *as_provider, url: "ProviderURL", override: {additional-prefix: '[P2] '}}
 
 # 自定义代理节点
 proxies:
