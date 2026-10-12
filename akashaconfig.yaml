@@ -2,31 +2,31 @@
 # 请在 proxy-providers 中添加订阅链接, 或在 proxies 中添加自定义节点
 
 # 锚点
-as_provider: &as_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 300}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
-as_url-test: &as_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
-as_select: &as_select {type: select, include-all: true, exclude-type: direct, empty-fallback: REJECT}
+a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 300}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
+a_url-test: &a_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
+a_select: &a_select {type: select, include-all: true, exclude-type: direct, empty-fallback: REJECT}
 
-as_oversea: &as_oversea [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
-as_auto: &as_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
-as_manual: &as_manual [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
-as_media: &as_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_oversea: &a_oversea [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_auto: &a_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_manual: &a_manual [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
+a_media: &a_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 
-as_defaultDNS: &as_defaultDNS ['119.29.29.29', '223.5.5.5']
-as_chinaDNS: &as_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
+a_defaultDNS: &a_defaultDNS ['119.29.29.29', '223.5.5.5']
+a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+a_foreignDNS: &a_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
 
 # 代理订阅
 # 添加多个订阅请确保名称不要重复, 并修改 additional-prefix 以确保节点不重名
 proxy-providers:
   Provider1:
-    <<: *as_provider
+    <<: *a_provider
     url: "ProviderURL"
     override:
       additional-prefix: '[P1] '
 
   # 以下是第二个订阅的示例
   # Provider2:
-  #   <<: *as_provider
+  #   <<: *a_provider
   #   url: "ProviderURL"
   #   override:
   #     additional-prefix: '[P2] '
@@ -103,16 +103,16 @@ dns:
     - "rule-set:microsoftcn_domain"
     - "rule-set:applecn_domain"
     - "rule-set:steamcn_domain"
-  default-nameserver: *as_defaultDNS
+  default-nameserver: *a_defaultDNS
   nameserver-policy:
     'rule-set:private_domain': 'system'
-    'rule-set:cn_domain': *as_chinaDNS
-    'rule-set:microsoftcn_domain': *as_chinaDNS
-    'rule-set:applecn_domain': *as_chinaDNS
-    'rule-set:steamcn_domain': *as_chinaDNS
-  nameserver: *as_foreignDNS
-  proxy-server-nameserver: *as_chinaDNS
-  direct-nameserver: *as_chinaDNS
+    'rule-set:cn_domain': *a_chinaDNS
+    'rule-set:microsoftcn_domain': *a_chinaDNS
+    'rule-set:applecn_domain': *a_chinaDNS
+    'rule-set:steamcn_domain': *a_chinaDNS
+  nameserver: *a_foreignDNS
+  proxy-server-nameserver: *a_chinaDNS
+  direct-nameserver: *a_chinaDNS
   direct-nameserver-follow-policy: true
 
 hosts:
@@ -125,28 +125,28 @@ hosts:
 
 # 出站策略
 proxy-groups:
-  - {name: 默认代理, type: select, proxies: *as_oversea}
-  - {name: YouTube, type: select, proxies: *as_auto}
-  - {name: Google, type: select, proxies: *as_auto}
-  - {name: AI, type: select, proxies: *as_manual}
-  - {name: GitHub, type: select, proxies: *as_auto}
-  - {name: OneDrive, type: select, proxies: *as_auto}
-  - {name: Microsoft, type: select, proxies: *as_auto}
-  - {name: Apple, type: select, proxies: *as_auto}
-  - {name: Steam, type: select, proxies: *as_auto}
-  - {name: TikTok, type: select, proxies: *as_manual}
-  - {name: Telegram, type: select, proxies: *as_manual}
-  - {name: NETFLIX, type: select, proxies: *as_media}
-  - {name: Wallet, type: select, proxies: *as_manual}
-  - {name: 漏网之鱼, type: select, proxies: *as_auto}
+  - {name: 默认代理, type: select, proxies: *a_oversea}
+  - {name: YouTube, type: select, proxies: *a_auto}
+  - {name: Google, type: select, proxies: *a_auto}
+  - {name: AI, type: select, proxies: *a_manual}
+  - {name: GitHub, type: select, proxies: *a_auto}
+  - {name: OneDrive, type: select, proxies: *a_auto}
+  - {name: Microsoft, type: select, proxies: *a_auto}
+  - {name: Apple, type: select, proxies: *a_auto}
+  - {name: Steam, type: select, proxies: *a_auto}
+  - {name: TikTok, type: select, proxies: *a_manual}
+  - {name: Telegram, type: select, proxies: *a_manual}
+  - {name: NETFLIX, type: select, proxies: *a_media}
+  - {name: Wallet, type: select, proxies: *a_manual}
+  - {name: 漏网之鱼, type: select, proxies: *a_auto}
 
   # 以下是地区分组。如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
-  - {name: 香港节点, <<: *as_url-test, filter: "(?i)(港|hk|hongkong|hong kong)"}
-  - {name: 台湾节点, <<: *as_url-test, filter: "(?i)(台|tw|taiwan)"}
-  - {name: 日本节点, <<: *as_url-test, filter: "(?i)(日|jp|japan)"}
-  - {name: 狮城节点, <<: *as_url-test, filter: "(?i)(新|sg|singapore)"}
-  - {name: 美国节点, <<: *as_url-test, filter: "(?i)(美|us|unitedstates|united states)"}
-  - {name: 全球手动, <<: *as_select}
+  - {name: 香港节点, <<: *a_url-test, filter: "(?i)(港|hk|hongkong|hong kong)"}
+  - {name: 台湾节点, <<: *a_url-test, filter: "(?i)(台|tw|taiwan)"}
+  - {name: 日本节点, <<: *a_url-test, filter: "(?i)(日|jp|japan)"}
+  - {name: 狮城节点, <<: *a_url-test, filter: "(?i)(新|sg|singapore)"}
+  - {name: 美国节点, <<: *a_url-test, filter: "(?i)(美|us|unitedstates|united states)"}
+  - {name: 全球手动, <<: *a_select}
 
 # 规则匹配
 rules:
