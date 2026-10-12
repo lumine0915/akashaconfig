@@ -16,6 +16,7 @@ as_chinaDNS: &as_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/
 as_foreignDNS: &as_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
 
 # 代理订阅
+# 添加多个订阅请确保名称不要重复, 并修改 additional-prefix 以确保节点不重名
 proxy-providers:
   Provider1:
     <<: *as_provider
@@ -23,7 +24,7 @@ proxy-providers:
     override:
       additional-prefix: '[P1] '
 
-  # 添加多个订阅请确保名称不要重复, 并修改 additional-prefix 以确保节点不重名
+  # 以下是第二个订阅的示例
   # Provider2:
   #   <<: *as_provider
   #   url: "ProviderURL"
