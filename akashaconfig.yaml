@@ -6,10 +6,8 @@ a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-chec
 a_url-test: &a_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 a_select: &a_select {type: select, include-all: true, empty-fallback: REJECT}
 
-a_oversea: &a_oversea [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
-a_auto: &a_auto [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
-a_manual: &a_manual [全球手动, 默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, DIRECT]
-a_media: &a_media [狮城节点, 默认代理, 日本节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_base: &a_base [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_oversea: &a_oversea [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
 
 a_defaultDNS: &a_defaultDNS ['119.29.29.29', '223.5.5.5']
 a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
@@ -125,20 +123,20 @@ hosts:
 
 # 出站策略
 proxy-groups:
-  - {name: 默认代理, type: select, proxies: *a_oversea}
-  - {name: YouTube, type: select, proxies: *a_auto}
-  - {name: Google, type: select, proxies: *a_auto}
-  - {name: AI, type: select, proxies: *a_manual}
-  - {name: GitHub, type: select, proxies: *a_auto}
-  - {name: OneDrive, type: select, proxies: *a_auto}
-  - {name: Microsoft, type: select, proxies: *a_auto}
-  - {name: Apple, type: select, proxies: *a_auto}
-  - {name: Steam, type: select, proxies: *a_auto}
-  - {name: TikTok, type: select, proxies: *a_manual}
-  - {name: Telegram, type: select, proxies: *a_manual}
-  - {name: NETFLIX, type: select, proxies: *a_media}
-  - {name: Wallet, type: select, proxies: *a_manual}
-  - {name: 漏网之鱼, type: select, proxies: *a_auto}
+  - {name: 默认代理, type: select, proxies: *a_base}
+  - {name: YouTube, type: select, default-selected: '美国节点', proxies: *a_oversea}
+  - {name: Google, type: select, proxies: *a_oversea}
+  - {name: AI, type: select, default-selected: '美国节点', proxies: *a_oversea}
+  - {name: GitHub, type: select, proxies: *a_oversea}
+  - {name: OneDrive, type: select, proxies: *a_oversea}
+  - {name: Microsoft, type: select, proxies: *a_oversea}
+  - {name: Apple, type: select, proxies: *a_oversea}
+  - {name: Steam, type: select, proxies: *a_oversea}
+  - {name: TikTok, type: select, proxies: *a_oversea}
+  - {name: Telegram, type: select, default-selected: '狮城节点', proxies: *a_oversea}
+  - {name: NETFLIX, type: select, default-selected: '狮城节点', proxies: *a_oversea}
+  - {name: Wallet, type: select, default-selected: '全球手动', proxies: *a_oversea}
+  - {name: 漏网之鱼, type: select, proxies: *a_oversea}
 
   # 以下是地区分组。如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
   - {name: 香港节点, <<: *a_url-test, filter: "(?i)(港|hk|hongkong|hong kong)"}
