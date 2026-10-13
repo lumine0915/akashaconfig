@@ -141,7 +141,6 @@ proxy-groups:
   - {name: Google, type: select, proxies: *a_oversea}
   - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea}
   - {name: GitHub, type: select, proxies: *a_oversea}
-  - {name: OneDrive, type: select, proxies: *a_oversea}
   - {name: Microsoft, type: select, proxies: *a_oversea}
   - {name: Apple, type: select, proxies: *a_oversea}
   - {name: Steam, type: select, proxies: *a_oversea}
@@ -175,7 +174,6 @@ rules:
   - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
   - RULE-SET,github,GitHub
-  - RULE-SET,onedrive,OneDrive
   - RULE-SET,microsoft_cn,DIRECT
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple_cn,DIRECT
@@ -215,7 +213,6 @@ rule-providers:
   github: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   microsoft_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
   microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
-  onedrive: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
   apple_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
   apple: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
   steam_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
