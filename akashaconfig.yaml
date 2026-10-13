@@ -148,6 +148,7 @@ proxy-groups:
   - {name: Steam, type: select, proxies: *a_oversea}
   - {name: TikTok, type: select, proxies: *a_oversea}
   - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
+  - {name: Spotify, type: select, proxies: *a_oversea}
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Wallet, type: select, default-selected: '全球手动', proxies: *a_oversea}
   - {name: AdBlock, type: select, proxies: *a_adblock}
@@ -187,8 +188,9 @@ rules:
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple,Apple
   - RULE-SET,tiktok,TikTok
-  - RULE-SET,telegram,Telegram
   - RULE-SET,netflix,NETFLIX
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,telegram,Telegram
   - RULE-SET,paypal,Wallet
   - RULE-SET,binance,Wallet
   - RULE-SET,okx,Wallet
@@ -199,6 +201,7 @@ rules:
   - RULE-SET,google_ip,Google
   - RULE-SET,apple_ip,Apple
   - RULE-SET,netflix_ip,NETFLIX
+  - RULE-SET,spotify_ip,Spotify
   - RULE-SET,telegram_ip,Telegram
   - RULE-SET,cn_ip,DIRECT
 
@@ -225,8 +228,9 @@ rule-providers:
   games_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
   steam: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
   tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
-  telegram: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   netflix: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  spotify: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs"}
+  telegram: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
   paypal: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   binance: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"}
   okx: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs"}
@@ -242,5 +246,6 @@ rule-providers:
   google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+  spotify_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/spotify.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
 
