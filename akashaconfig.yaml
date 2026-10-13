@@ -101,6 +101,7 @@ dns:
   default-nameserver: *a_defaultDNS
   nameserver-policy:
     'rule-set:private': 'system'
+    'rule-set:douyin': ['system', '180.184.1.1', '180.184.2.2']
     'rule-set:cn_domain': *a_chinaDNS
     'rule-set:microsoft_cn': *a_chinaDNS
     'rule-set:apple_cn': *a_chinaDNS
@@ -229,6 +230,7 @@ rule-providers:
   geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   geolocation-cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  douyin: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/douyin.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
   cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
