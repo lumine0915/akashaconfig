@@ -3,11 +3,19 @@
 
 # 锚点
 a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 300}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
-a_url-test: &a_url-test {type: url-test, include-all: true, url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
+a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 300, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', empty-fallback: REJECT}
 
-a_base: &a_base [日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
-a_oversea: &a_oversea [默认代理, 日本节点, 狮城节点, 美国节点, 台湾节点, 香港节点, 全球手动, DIRECT]
+a_base: &a_base [日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
+a_oversea: &a_oversea [默认代理, 日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
+
+# 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
+a_filterHK: &a_filterHK "(?i)(港|hk|hongkong|hong kong)"
+a_filterTW: &a_filterTW "(?i)(台|tw|taiwan)"
+a_filterJP: &a_filterJP "(?i)(日|jp|japan)"
+a_filterSG: &a_filterSG "(?i)(新|sg|singapore)"
+a_filterUS: &a_filterUS "(?i)(美|us|unitedstates|united states)"
+a_filterOT: &a_filterOT "(?i)(港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|united states)"
 
 a_defaultDNS: &a_defaultDNS ['119.29.29.29', '223.5.5.5']
 a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
@@ -124,26 +132,33 @@ hosts:
 # 出站策略
 proxy-groups:
   - {name: 默认代理, type: select, proxies: *a_base}
-  - {name: YouTube, type: select, default-selected: '美国节点', proxies: *a_oversea}
+  - {name: YouTube, type: select, default-selected: '美国', proxies: *a_oversea}
   - {name: Google, type: select, proxies: *a_oversea}
-  - {name: AI, type: select, default-selected: '美国节点', proxies: *a_oversea}
+  - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea}
   - {name: GitHub, type: select, proxies: *a_oversea}
   - {name: OneDrive, type: select, proxies: *a_oversea}
   - {name: Microsoft, type: select, proxies: *a_oversea}
   - {name: Apple, type: select, proxies: *a_oversea}
   - {name: Steam, type: select, proxies: *a_oversea}
   - {name: TikTok, type: select, proxies: *a_oversea}
-  - {name: Telegram, type: select, default-selected: '狮城节点', proxies: *a_oversea}
-  - {name: NETFLIX, type: select, default-selected: '狮城节点', proxies: *a_oversea}
+  - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
+  - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Wallet, type: select, default-selected: '全球手动', proxies: *a_oversea}
   - {name: 漏网之鱼, type: select, proxies: *a_oversea}
 
-  # 以下是地区分组。如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
-  - {name: 香港节点, <<: *a_url-test, filter: "(?i)(港|hk|hongkong|hong kong)"}
-  - {name: 台湾节点, <<: *a_url-test, filter: "(?i)(台|tw|taiwan)"}
-  - {name: 日本节点, <<: *a_url-test, filter: "(?i)(日|jp|japan)"}
-  - {name: 狮城节点, <<: *a_url-test, filter: "(?i)(新|sg|singapore)"}
-  - {name: 美国节点, <<: *a_url-test, filter: "(?i)(美|us|unitedstates|united states)"}
+  # 以下是地区分组
+  - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动]}
+  - {name: 香港自动, <<: *a_url-test, filter: *a_filterHK}
+  - {name: 台湾, <<: *a_select, filter: *a_filterTW, proxies: [台湾自动]}
+  - {name: 台湾自动, <<: *a_url-test, filter: *a_filterTW}
+  - {name: 日本, <<: *a_select, filter: *a_filterJP, proxies: [日本自动]}
+  - {name: 日本自动, <<: *a_url-test, filter: *a_filterJP}
+  - {name: 新加坡, <<: *a_select, filter: *a_filterSG, proxies: [新加坡自动]}
+  - {name: 新加坡自动, <<: *a_url-test, filter: *a_filterSG}
+  - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动]}
+  - {name: 美国自动, <<: *a_url-test, filter: *a_filterUS}
+  - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT}
+  - {name: 全球自动, <<: *a_url-test}
   - {name: 全球手动, <<: *a_select}
 
 # 规则匹配
