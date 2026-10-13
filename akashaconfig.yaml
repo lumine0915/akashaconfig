@@ -127,12 +127,12 @@ a_base: &a_base [日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球
 a_oversea: &a_oversea [默认代理, 日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
 
 # 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
-a_filterHK: &a_filterHK "(?i)(港|hk|hongkong|hong kong)"
-a_filterTW: &a_filterTW "(?i)(台|tw|taiwan)"
-a_filterJP: &a_filterJP "(?i)(日|jp|japan)"
-a_filterSG: &a_filterSG "(?i)(新|sg|singapore)"
-a_filterUS: &a_filterUS "(?i)(美|us|unitedstates|united states)"
-a_filterOT: &a_filterOT "(?i)(港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates|united states)"
+a_filterHK: &a_filterHK '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong)'
+a_filterTW: &a_filterTW '(?i)(🇹🇼|台湾|台北|高雄|(?<![A-Za-z])TWN?(?![A-Za-z])|taiwan)'
+a_filterJP: &a_filterJP '(?i)(🇯🇵|日本|东京|大阪|京都|(?<![A-Za-z])JPN?(?![A-Za-z])|japan)'
+a_filterSG: &a_filterSG '(?i)(🇸🇬|新加坡|狮城|(?<![A-Za-z])SGP?(?![A-Za-z])|singapore)'
+a_filterUS: &a_filterUS '(?i)(🇺🇸|美国|纽约|洛杉矶|旧金山|芝加哥|休斯顿|迈阿密|西雅图|波士顿|华盛顿|拉斯维加斯|圣何塞|圣地亚哥|(?<![A-Za-z])USA?(?![A-Za-z])|america|united\s*states)'
+a_filterOT: &a_filterOT '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong|🇯🇵|日本|东京|大阪|京都|(?<![A-Za-z])JPN?(?![A-Za-z])|japan|🇺🇸|美国|纽约|洛杉矶|旧金山|芝加哥|休斯顿|迈阿密|西雅图|波士顿|华盛顿|拉斯维加斯|圣何塞|圣地亚哥|(?<![A-Za-z])USA?(?![A-Za-z])|america|united\s*states|🇸🇬|新加坡|狮城|(?<![A-Za-z])SGP?(?![A-Za-z])|singapore|🇹🇼|台湾|台北|高雄|(?<![A-Za-z])TWN?(?![A-Za-z])|taiwan)'
 
 # 出站策略
 proxy-groups:
