@@ -94,17 +94,17 @@ dns:
   fake-ip-filter:
     - "rule-set:private"
     - "rule-set:fakeip-filter"
-    - "rule-set:cn_domain"
+    - "rule-set:geolocation-cn"
     - "rule-set:microsoft_cn"
     - "rule-set:apple_cn"
-    - "rule-set:steam_cn"
+    - "rule-set:games_cn"
   default-nameserver: *a_defaultDNS
   nameserver-policy:
     'rule-set:private': 'system'
     'rule-set:cn_domain': *a_chinaDNS
     'rule-set:microsoft_cn': *a_chinaDNS
     'rule-set:apple_cn': *a_chinaDNS
-    'rule-set:steam_cn': *a_chinaDNS
+    'rule-set:games_cn': *a_chinaDNS
   nameserver: *a_foreignDNS
   proxy-server-nameserver: *a_chinaDNS
   proxy-server-nameserver-policy: *a_providerDNS
@@ -170,13 +170,16 @@ rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private,DIRECT
 
+  - RULE-SET,geolocation-cn,DIRECT
+  - RULE-SET,microsoft_cn,DIRECT
+  - RULE-SET,apple_cn,DIRECT
+  - RULE-SET,games_cn,DIRECT
+
   - RULE-SET,ai,AI
   - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
   - RULE-SET,github,GitHub
-  - RULE-SET,microsoft_cn,DIRECT
   - RULE-SET,microsoft,Microsoft
-  - RULE-SET,apple_cn,DIRECT
   - RULE-SET,apple,Apple
   - RULE-SET,tiktok,TikTok
   - RULE-SET,telegram,Telegram
@@ -185,7 +188,6 @@ rules:
   - RULE-SET,binance,Wallet
   - RULE-SET,okx,Wallet
   - RULE-SET,usd,Wallet
-  - RULE-SET,steam_cn,DIRECT
   - RULE-SET,steam,Steam
   - RULE-SET,geolocation-!cn,默认代理
 
@@ -215,7 +217,7 @@ rule-providers:
   microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
   apple_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
   apple: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
-  steam_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam@cn.mrs"}
+  games_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
   steam: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
   tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   telegram: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
@@ -225,6 +227,7 @@ rule-providers:
   okx: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs"}
   usd: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"}
   geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  geolocation-cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
