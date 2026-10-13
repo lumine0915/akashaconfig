@@ -126,6 +126,7 @@ a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', em
 
 a_base: &a_base [日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
 a_oversea: &a_oversea [默认代理, 日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
+a_adblock: &a_adblock [REJECT, REJECT-DROP, PASS]
 
 # 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
 a_filterHK: &a_filterHK '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong)'
@@ -149,6 +150,7 @@ proxy-groups:
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Wallet, type: select, default-selected: '全球手动', proxies: *a_oversea}
+  - {name: AdBlock, type: select, proxies: *a_adblock}
   - {name: 漏网之鱼, type: select, proxies: *a_oversea}
 
   # 以下是地区分组
@@ -175,6 +177,8 @@ rules:
   - RULE-SET,microsoft_cn,DIRECT
   - RULE-SET,apple_cn,DIRECT
   - RULE-SET,games_cn,DIRECT
+
+  - RULE-SET,category-ads,AdBlock
 
   - RULE-SET,ai,AI
   - RULE-SET,youtube,YouTube
@@ -231,6 +235,7 @@ rule-providers:
   geolocation-cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-cn.mrs"}
   cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   douyin: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/douyin.mrs"}
+  category-ads: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
   cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
