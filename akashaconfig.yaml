@@ -79,6 +79,7 @@ tun:
 a_defaultDNS: &a_defaultDNS ['119.29.29.29', '223.5.5.5']
 a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
 a_foreignDNS: &a_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
+a_providerDNS: &a_providerDNS {}  # 订阅的私人DNS配置, 语法同 nameserver-policy, 没有请留空
 
 # DNS配置
 dns:
@@ -106,6 +107,7 @@ dns:
     'rule-set:steamcn_domain': *a_chinaDNS
   nameserver: *a_foreignDNS
   proxy-server-nameserver: *a_chinaDNS
+  proxy-server-nameserver-policy: *a_providerDNS
   direct-nameserver: *a_chinaDNS
   direct-nameserver-follow-policy: true
 
