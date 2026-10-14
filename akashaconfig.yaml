@@ -76,8 +76,8 @@ tun:
   auto-detect-interface: true
 
 # DNS通用配置
-a_defaultDNS: &a_defaultDNS ['119.29.29.29', '223.5.5.5']
-a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+a_defaultDNS: &a_defaultDNS ['119.29.29.29#DIRECT', '223.5.5.5#DIRECT']
+a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query#DIRECT', 'https://dns.alidns.com/dns-query#DIRECT']
 a_foreignDNS: &a_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
 a_providerDNS: &a_providerDNS {}  # 订阅的私人DNS配置, 语法同 nameserver-policy
 
