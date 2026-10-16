@@ -187,6 +187,7 @@ rule-anchor:
 
 # 规则集
 rule-providers:
+  fakeip-filter: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/fakeip-filter.mrs"}
   private: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/private.mrs"}
   ai: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/youtube.mrs"}
@@ -207,11 +208,7 @@ rule-providers:
   okx: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/okx.mrs"}
   usd: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"}
   geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/geolocation-!cn.mrs"}
-  geolocation-cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/geolocation-cn.mrs"}
-
-  fakeip-filter: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/fakeip-filter.mrs"}
   cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/cn.mrs"}
-  douyin: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/douyin.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/private.mrs"}
   cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/cn.mrs"}
