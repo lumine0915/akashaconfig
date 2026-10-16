@@ -184,32 +184,32 @@ rule-anchor:
 # 规则集
 rule-providers:
   fakeip-filter: {<<: *domain, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
-  private: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/private.mrs"}
-  ai: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/category-ai-!cn.mrs"}
-  youtube: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/youtube.mrs"}
-  google: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/google.mrs"}
-  github: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/github.mrs"}
-  microsoft_cn: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
-  microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/microsoft.mrs"}
-  apple_cn: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
-  apple: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/apple.mrs"}
-  games_cn: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
-  steam: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/steam.mrs"}
-  tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/tiktok.mrs"}
-  netflix: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/netflix.mrs"}
-  spotify: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/spotify.mrs"}
-  telegram: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/telegram.mrs"}
-  paypal: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/paypal.mrs"}
-  binance: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/binance.mrs"}
-  okx: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/okx.mrs"}
-  usd: {<<: *domain, url: "https://github.com/appshubcc/bett-rules/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"}
-  geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/cn.mrs"}
+  private: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  ai: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs"}
+  youtube: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
+  google: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
+  github: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
+  microsoft_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
+  microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
+  apple_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
+  apple: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"}
+  games_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
+  steam: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
+  tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
+  netflix: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  spotify: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs"}
+  telegram: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  paypal: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
+  binance: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"}
+  okx: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs"}
+  usd: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"}
+  geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
 
-  private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/private.mrs"}
-  google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/google.mrs"}
-  apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo-lite/geoip/apple.mrs"}
-  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/netflix.mrs"}
-  telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/telegram.mrs"}
-  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/cn.mrs"}
+  private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
+  google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
+  apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+  telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
 
