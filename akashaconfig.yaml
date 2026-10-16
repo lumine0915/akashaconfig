@@ -170,11 +170,7 @@ rules:
 
   - RULE-SET,google_ip,Google
   - RULE-SET,apple_ip,Apple
-  - RULE-SET,microsoft_ip,Microsoft
-  - RULE-SET,tiktok_ip,TikTok
   - RULE-SET,netflix_ip,NETFLIX
-  - RULE-SET,spotify_ip,Spotify
-  - RULE-SET,steam_ip,Steam
   - RULE-SET,telegram_ip,Telegram
   - RULE-SET,cn_ip,DIRECT
 
@@ -211,13 +207,9 @@ rule-providers:
   cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/cn.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/private.mrs"}
-  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/cn.mrs"}
   google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/google.mrs"}
-  microsoft_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/microsoft.mrs"}
-  telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/telegram.mrs"}
-  tiktok_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/tiktok.mrs"}
-  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/netflix.mrs"}
-  spotify_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/spotify.mrs"}
-  steam_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/steam.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo-lite/geoip/apple.mrs"}
+  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/netflix.mrs"}
+  telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/telegram.mrs"}
+  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/cn.mrs"}
 
