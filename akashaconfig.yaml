@@ -183,7 +183,7 @@ rule-anchor:
 
 # 规则集
 rule-providers:
-  fakeip-filter: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/fakeip-filter.mrs"}
+  fakeip-filter: {<<: *domain, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
   private: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/private.mrs"}
   ai: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/youtube.mrs"}
