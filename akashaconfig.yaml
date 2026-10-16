@@ -86,7 +86,7 @@ dns:
   fake-ip-filter:
     - "rule-set:private"
     - "rule-set:fakeip-filter"
-    - "rule-set:geolocation-cn"
+    - "rule-set:cn"
   default-nameserver:
     - 119.29.29.29
     - 223.5.5.5
@@ -146,7 +146,6 @@ rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private,DIRECT
 
-  - RULE-SET,geolocation-cn,DIRECT
   - RULE-SET,microsoft_cn,DIRECT
   - RULE-SET,apple_cn,DIRECT
   - RULE-SET,games_cn,DIRECT
@@ -166,6 +165,7 @@ rules:
   - RULE-SET,okx,Wallet
   - RULE-SET,usd,Wallet
   - RULE-SET,steam,Steam
+  - RULE-SET,cn,DIRECT
   - RULE-SET,geolocation-!cn,默认代理
 
   - RULE-SET,google_ip,Google
@@ -210,7 +210,7 @@ rule-providers:
   geolocation-cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/geolocation-cn.mrs"}
 
   fakeip-filter: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/fakeip-filter.mrs"}
-  cn_domain: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/cn.mrs"}
+  cn: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/cn.mrs"}
   douyin: {<<: *domain, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geosite/douyin.mrs"}
 
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/appshubcc/bett-rules/meta/geo/geoip/private.mrs"}
