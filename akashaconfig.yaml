@@ -98,8 +98,8 @@ dns:
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', empty-fallback: REJECT}
 
-a_base: &a_base [日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
-a_oversea: &a_oversea [默认代理, 日本, 新加坡, 美国, 台湾, 香港, 其他地区, 全球自动, 全球手动, DIRECT]
+a_base: &a_base [香港, 台湾, 日本, 新加坡, 美国, 其他地区, 全球自动, 全球手动, DIRECT]
+a_oversea: &a_oversea [默认代理, 香港, 台湾, 日本, 新加坡, 美国, 其他地区, 全球自动, 全球手动, DIRECT]
 
 # 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
 a_filterHK: &a_filterHK '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong)'
@@ -119,9 +119,9 @@ proxy-groups:
   - {name: Microsoft, type: select, proxies: *a_oversea}
   - {name: Apple, type: select, proxies: *a_oversea}
   - {name: Steam, type: select, proxies: *a_oversea}
-  - {name: TikTok, type: select, proxies: *a_oversea}
+  - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea}
   - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
-  - {name: Spotify, type: select, proxies: *a_oversea}
+  - {name: Spotify, type: select, default-selected: '日本', proxies: *a_oversea}
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Wallet, type: select, default-selected: '全球手动', proxies: *a_oversea}
   - {name: 漏网之鱼, type: select, proxies: *a_oversea}
