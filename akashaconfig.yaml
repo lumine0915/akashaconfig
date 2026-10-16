@@ -5,7 +5,6 @@
 a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 600, lazy: true}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
 
 # 订阅
-# 添加多个订阅请确保名称不要重复, 并修改 additional-prefix 以确保节点不重名
 proxy-providers:
   Provider1:
     <<: *a_provider
@@ -13,7 +12,7 @@ proxy-providers:
     override:
       additional-prefix: '[P1] '
 
-  # 以下是第二个订阅的示例
+  # 以下是第二个订阅的示例, 注意名称不能重复
   # Provider2:
   #   <<: *a_provider
   #   url: "ProviderURL"
