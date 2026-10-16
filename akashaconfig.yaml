@@ -75,18 +75,10 @@ tun:
   auto-redirect: true
   auto-detect-interface: true
 
-# DNS通用配置
-a_defaultDNS: &a_defaultDNS ['119.29.29.29#DIRECT', '223.5.5.5#DIRECT']
-a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query#DIRECT', 'https://dns.alidns.com/dns-query#DIRECT']
-a_foreignDNS: &a_foreignDNS ['https://cloudflare-dns.com/dns-query#默认代理', 'https://dns.google/dns-query#默认代理']
-a_providerDNS: &a_providerDNS {}  # 订阅的私人DNS配置, 语法同 nameserver-policy
-
 # DNS
 dns:
   enable: true
   cache-algorithm: arc
-  use-hosts: true
-  use-system-hosts: true
   ipv6: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
@@ -95,30 +87,12 @@ dns:
     - "rule-set:private"
     - "rule-set:fakeip-filter"
     - "rule-set:geolocation-cn"
-    - "rule-set:microsoft_cn"
-    - "rule-set:apple_cn"
-    - "rule-set:games_cn"
-  default-nameserver: *a_defaultDNS
-  nameserver-policy:
-    'rule-set:private': 'system'
-    'rule-set:douyin': ['system', '180.184.1.1', '180.184.2.2']
-    'rule-set:cn_domain': *a_chinaDNS
-    'rule-set:microsoft_cn': *a_chinaDNS
-    'rule-set:apple_cn': *a_chinaDNS
-    'rule-set:games_cn': *a_chinaDNS
-  nameserver: *a_foreignDNS
-  proxy-server-nameserver: *a_chinaDNS
-  proxy-server-nameserver-policy: *a_providerDNS
-  direct-nameserver: *a_chinaDNS
-  direct-nameserver-follow-policy: true
-
-hosts:
-  'doh.pub': ['1.12.12.12', '120.53.53.53']
-  'cloudflare-dns.com': ['1.1.1.1', '1.0.0.1']
-  'dns.google': ['8.8.8.8', '8.8.4.4']
-
-  # 解决谷歌商店无法下载的问题
-  'services.googleapis.cn': 'services.googleapis.com'
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  nameserver:
+    - "https://doh.pub/dns-query"
+    - "https://dns.alidns.com/dns-query"
 
 # 出站策略通用配置
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
