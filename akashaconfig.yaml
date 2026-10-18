@@ -114,7 +114,7 @@ a_filterOT: &a_filterOT '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong
 # 出站策略
 proxy-groups:
   - {name: 默认代理, type: select, proxies: *a_base}
-  - {name: YouTube, type: select, default-selected: '美国', proxies: *a_oversea}
+  - {name: YouTube, type: select, proxies: *a_oversea}
   - {name: Google, type: select, proxies: *a_oversea}
   - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea}
   - {name: GitHub, type: select, proxies: *a_oversea}
