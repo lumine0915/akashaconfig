@@ -75,7 +75,7 @@ tun:
   auto-detect-interface: true
 
 hosts:
-  services.googleapis.cn: services.googleapis.com  # 谷歌商店  解决无法下载的问题
+  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
 
 # DNS
 dns:
