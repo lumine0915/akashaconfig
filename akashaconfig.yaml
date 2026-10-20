@@ -123,7 +123,7 @@ proxy-groups:
   - {name: Steam, type: select, proxies: *a_oversea}
   - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea}
   - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
-  - {name: Spotify, type: select, default-selected: '日本', proxies: *a_oversea}
+  - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
   - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea}
   - {name: 漏网之鱼, type: select, proxies: *a_oversea}
