@@ -122,7 +122,7 @@ proxy-groups:
   - {name: Apple, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple_2.png'}
   - {name: Steam, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Steam.png'}
   - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png'}
-  - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
+  - {name: Netflix, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
   - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png'}
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png'}
   - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency_2.png'}
@@ -159,7 +159,7 @@ rules:
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple,Apple
   - RULE-SET,tiktok,TikTok
-  - RULE-SET,netflix,NETFLIX
+  - RULE-SET,netflix,Netflix
   - RULE-SET,spotify,Spotify
   - RULE-SET,telegram,Telegram
   - RULE-SET,paypal,Wallet
@@ -170,7 +170,7 @@ rules:
 
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,apple_ip,Apple,no-resolve
-  - RULE-SET,netflix_ip,NETFLIX,no-resolve
+  - RULE-SET,netflix_ip,Netflix,no-resolve
   - RULE-SET,telegram_ip,Telegram,no-resolve
 
   - RULE-SET,geolocation-!cn,默认代理
