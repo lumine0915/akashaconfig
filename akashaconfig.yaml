@@ -113,35 +113,35 @@ a_filterOT: &a_filterOT '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong
 
 # 出站策略
 proxy-groups:
-  - {name: 默认代理, type: select, proxies: *a_base}
-  - {name: YouTube, type: select, proxies: *a_oversea}
-  - {name: Google, type: select, proxies: *a_oversea}
-  - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea}
-  - {name: GitHub, type: select, proxies: *a_oversea}
-  - {name: Microsoft, type: select, proxies: *a_oversea}
-  - {name: Apple, type: select, proxies: *a_oversea}
-  - {name: Steam, type: select, proxies: *a_oversea}
-  - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea}
-  - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea}
-  - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea}
-  - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea}
-  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea}
-  - {name: 漏网之鱼, type: select, proxies: *a_oversea}
+  - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png'}
+  - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png'}
+  - {name: Google, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png'}
+  - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png'}
+  - {name: GitHub, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/GitHub.png'}
+  - {name: Microsoft, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Microsoft.png'}
+  - {name: Apple, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple_2.png'}
+  - {name: Steam, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Steam.png'}
+  - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png'}
+  - {name: NETFLIX, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
+  - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png'}
+  - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png'}
+  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency_2.png'}
+  - {name: 漏网之鱼, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png'}
 
   # 以下是地区分组
-  - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动]}
+  - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Hong_Kong.png'}
   - {name: 香港自动, <<: *a_url-test, filter: *a_filterHK}
-  - {name: 台湾, <<: *a_select, filter: *a_filterTW, proxies: [台湾自动]}
+  - {name: 台湾, <<: *a_select, filter: *a_filterTW, proxies: [台湾自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Taiwan.png'}
   - {name: 台湾自动, <<: *a_url-test, filter: *a_filterTW}
-  - {name: 日本, <<: *a_select, filter: *a_filterJP, proxies: [日本自动]}
+  - {name: 日本, <<: *a_select, filter: *a_filterJP, proxies: [日本自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Japan.png'}
   - {name: 日本自动, <<: *a_url-test, filter: *a_filterJP}
-  - {name: 新加坡, <<: *a_select, filter: *a_filterSG, proxies: [新加坡自动]}
+  - {name: 新加坡, <<: *a_select, filter: *a_filterSG, proxies: [新加坡自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Singapore.png'}
   - {name: 新加坡自动, <<: *a_url-test, filter: *a_filterSG}
-  - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动]}
+  - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/United_States.png'}
   - {name: 美国自动, <<: *a_url-test, filter: *a_filterUS}
-  - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT}
-  - {name: 全球自动, <<: *a_url-test}
-  - {name: 全球手动, <<: *a_select}
+  - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/World_Map.png'}
+  - {name: 全球自动, <<: *a_url-test, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Auto.png'}
+  - {name: 全球手动, <<: *a_select, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Global.png'}
 
 # 规则匹配
 rules:
