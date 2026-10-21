@@ -100,8 +100,8 @@ dns:
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', empty-fallback: REJECT}
 
-a_base: &a_base [香港, 台湾, 日本, 新加坡, 美国, 其他地区, 全球自动, 全球手动, DIRECT]
-a_oversea: &a_oversea [默认代理, 香港, 台湾, 日本, 新加坡, 美国, 其他地区, 全球自动, 全球手动, DIRECT]
+a_base: &a_base [香港, 台湾, 日本, 新加坡, 美国, 其他地区, 高倍率, 低倍率, 全球自动, 全球手动, DIRECT]
+a_oversea: &a_oversea [默认代理, 香港, 台湾, 日本, 新加坡, 美国, 其他地区, 高倍率, 低倍率, 全球自动, 全球手动, DIRECT]
 
 # 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
 a_filterHK: &a_filterHK '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong)'
@@ -110,6 +110,8 @@ a_filterJP: &a_filterJP '(?i)(🇯🇵|日本|东京|大阪|京都|(?<![A-Za-z])
 a_filterSG: &a_filterSG '(?i)(🇸🇬|新加坡|狮城|(?<![A-Za-z])SGP?(?![A-Za-z])|singapore)'
 a_filterUS: &a_filterUS '(?i)(🇺🇸|美国|纽约|洛杉矶|旧金山|芝加哥|休斯顿|迈阿密|西雅图|波士顿|华盛顿|拉斯维加斯|圣何塞|(?<![A-Za-z])USA?(?![A-Za-z])|america|united\s*states)'
 a_filterOT: &a_filterOT '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong|🇯🇵|日本|东京|大阪|京都|(?<![A-Za-z])JPN?(?![A-Za-z])|japan|🇺🇸|美国|纽约|洛杉矶|旧金山|芝加哥|休斯顿|迈阿密|西雅图|波士顿|华盛顿|拉斯维加斯|圣何塞|(?<![A-Za-z])USA?(?![A-Za-z])|america|united\s*states|🇸🇬|新加坡|狮城|(?<![A-Za-z])SGP?(?![A-Za-z])|singapore|🇹🇼|台湾|台北|高雄|(?<![A-Za-z])TWN?(?![A-Za-z])|taiwan)'
+a_filterHI: &a_filterHI '^(?i).*(?<![0-9.])(x(1\.[5-9]\d*|[2-9](\.\d+)?|10(\.0+)?)|(1\.[5-9]\d*|[2-9](\.\d+)?|10(\.0+)?|高级)x).*$'
+a_filterLO: &a_filterLO '^(?i).*(0\.01|0\.[1-8]|下载|实验).*$'
 
 # 出站策略
 proxy-groups:
@@ -140,6 +142,8 @@ proxy-groups:
   - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/United_States.png'}
   - {name: 美国自动, <<: *a_url-test, filter: *a_filterUS}
   - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/World_Map.png'}
+  - {name: 高倍率, <<: *a_select, filter: *a_filterHI, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/VIP.png'}
+  - {name: 低倍率, <<: *a_select, filter: *a_filterLO, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available_1.png'}
   - {name: 全球自动, <<: *a_url-test, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Auto.png'}
   - {name: 全球手动, <<: *a_select, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Global.png'}
 
