@@ -125,7 +125,7 @@ proxy-groups:
   - {name: Netflix, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
   - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png'}
   - {name: Telegram, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Telegram.png'}
-  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency_2.png'}
+  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency.png'}
   - {name: 漏网之鱼, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png'}
 
   # 以下是地区分组
