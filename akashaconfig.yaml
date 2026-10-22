@@ -116,6 +116,7 @@ a_filterLO: &a_filterLO '^(?i).*(0\.01|0\.[1-8]|下载|实验).*$'
 # 出站策略
 proxy-groups:
   - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png'}
+  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Stack.png'}
   - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png'}
   - {name: Google, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png'}
   - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png'}
@@ -156,6 +157,7 @@ rules:
   - RULE-SET,apple_cn,DIRECT
   - RULE-SET,games_cn,DIRECT
 
+  - RULE-SET,googlefcm,FCM
   - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
   - RULE-SET,ai,AI
@@ -191,6 +193,7 @@ rule-anchor:
 rule-providers:
   fakeip-filter: {<<: *domain, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
   private: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs"}
+  googlefcm: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
   youtube: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs"}
   google: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs"}
   ai: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
