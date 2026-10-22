@@ -116,7 +116,7 @@ a_filterLO: &a_filterLO '^(?i).*(0\.01|0\.[1-8]|下载|实验).*$'
 # 出站策略
 proxy-groups:
   - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png'}
-  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Stack.png'}
+  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available.png'}
   - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png'}
   - {name: Google, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png'}
   - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png'}
