@@ -103,6 +103,7 @@ a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', em
 
 a_base: &a_base [香港, 台湾, 日本, 新加坡, 美国, 其他地区, 高倍率, 低倍率, 全球自动, 全球手动, DIRECT]
 a_oversea: &a_oversea [默认代理, 香港, 台湾, 日本, 新加坡, 美国, 其他地区, 高倍率, 低倍率, 全球自动, 全球手动, DIRECT]
+a_switch: &a_switch [默认代理, DIRECT]
 
 # 地区筛选正则, 如果相应分组没有筛选到对应的国家, 请根据自己节点名字调整筛选关键字
 a_filterHK: &a_filterHK '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong\s*kong)'
@@ -128,8 +129,8 @@ proxy-groups:
   - {name: Netflix, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
   - {name: Spotify, type: select, default-selected: '新加坡', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png'}
   - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency.png'}
-  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available.png'}
-  - {name: 漏网之鱼, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png'}
+  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_switch, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available.png'}
+  - {name: 漏网之鱼, type: select, proxies: *a_switch, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png'}
 
   # 以下是地区分组
   - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Hong_Kong.png'}
