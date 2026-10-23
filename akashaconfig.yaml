@@ -164,23 +164,23 @@ rules:
   - RULE-SET,github,默认代理
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple,Apple
-  - RULE-SET,tiktok,TikTok
-  - RULE-SET,netflix,Netflix
-  - RULE-SET,spotify,Spotify
   - RULE-SET,telegram,默认代理
-  - RULE-SET,paypal,Wallet
-  - RULE-SET,binance,Wallet
-  - RULE-SET,okx,Wallet
-  - RULE-SET,usd,Wallet
   - RULE-SET,steam,Games
   - RULE-SET,epic,Games
   - RULE-SET,games_!cn,Games
   - RULE-SET,emby,Emby
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,netflix,Netflix
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,paypal,Wallet
+  - RULE-SET,binance,Wallet
+  - RULE-SET,okx,Wallet
+  - RULE-SET,usd,Wallet
 
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,apple_ip,Apple,no-resolve
-  - RULE-SET,netflix_ip,Netflix,no-resolve
   - RULE-SET,telegram_ip,默认代理,no-resolve
+  - RULE-SET,netflix_ip,Netflix,no-resolve
 
   - RULE-SET,geolocation-!cn,默认代理
   - RULE-SET,cn,DIRECT
