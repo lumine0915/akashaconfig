@@ -43,6 +43,13 @@ profile:
   store-selected: true
   store-fake-ip: true
 
+# 用户验证
+authentication:
+  - "akasha:void"
+skip-auth-prefixes:
+  - 127.0.0.1/8
+  - ::1/128
+
 # 控制面板
 external-controller: 127.0.0.1:9090
 secret: ""
