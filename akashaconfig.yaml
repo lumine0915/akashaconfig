@@ -57,10 +57,6 @@ secret: ""
 external-ui: ui
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
-# Hosts
-hosts:
-  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
-
 # 配置存储
 profile:
   store-selected: true
@@ -95,6 +91,10 @@ sniffer:
     - "dlg.io.mi.com"
     - "+.oray.com"
     - "+.sunlogin.net"
+
+# Hosts
+hosts:
+  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
 
 # DNS
 dns:
