@@ -29,26 +29,29 @@ proxies:
   #   cipher: aes-128-gcm
   #   password: password
 
-# 全局配置
+# 端口配置
 mixed-port: 7890
+
+# 局域网共享和用户验证
 allow-lan: true
 bind-address: "*"
-ipv6: true
-unified-delay: true
-tcp-concurrent: true
-log-level: info
-keep-alive-idle: 600
-keep-alive-interval: 30
-profile:
-  store-selected: true
-  store-fake-ip: true
-
-# 用户验证
 authentication:
   - "akasha:void"
 skip-auth-prefixes:
   - 127.0.0.1/8
   - ::1/128
+
+# 全局配置
+mode: rule
+log-level: info
+ipv6: true
+unified-delay: true
+tcp-concurrent: true
+keep-alive-idle: 600
+keep-alive-interval: 30
+profile:
+  store-selected: true
+  store-fake-ip: true
 
 # 控制面板
 external-controller: 127.0.0.1:9090
@@ -56,7 +59,20 @@ secret: ""
 external-ui: ui
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
-# 嗅探
+# Hosts
+hosts:
+  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
+
+# Tun
+tun:
+  enable: true
+  stack: mips
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# 域名嗅探
 sniffer:
   enable: true
   force-dns-mapping: true
@@ -76,18 +92,6 @@ sniffer:
     - "dlg.io.mi.com"
     - "+.oray.com"
     - "+.sunlogin.net"
-
-# 入站
-tun:
-  enable: true
-  stack: mips
-  dns-hijack: ["any:53", "tcp://any:53"]
-  auto-route: true
-  auto-redirect: true
-  auto-detect-interface: true
-
-hosts:
-  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
 
 # DNS
 dns:
@@ -110,7 +114,7 @@ dns:
     - "https://doh.pub/dns-query"
     - "https://dns.alidns.com/dns-query"
 
-# 出站策略通用配置
+# 策略组通用配置
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
 a_select: &a_select {type: select, include-all: true, exclude-type: 'direct', empty-fallback: REJECT}
 
@@ -128,7 +132,7 @@ a_filterOT: &a_filterOT '(?i)(🇭🇰|香港|(?<![A-Za-z])HKG?(?![A-Za-z])|hong
 a_filterHI: &a_filterHI '^(?i).*(?<![0-9.])(x(1\.[5-9]\d*|[2-9](\.\d+)?|10(\.0+)?)|(1\.[5-9]\d*|[2-9](\.\d+)?|10(\.0+)?|高级)x).*$'
 a_filterLO: &a_filterLO '^(?i).*(0\.01|0\.[1-8]|下载|实验).*$'
 
-# 出站策略
+# 策略组
 proxy-groups:
   - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png'}
   - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png'}
@@ -162,7 +166,7 @@ proxy-groups:
   - {name: 全球自动, <<: *a_url-test, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Auto.png'}
   - {name: 全球手动, <<: *a_select, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Global.png'}
 
-# 规则匹配
+# 路由规则
 rules:
   - RULE-SET,private_ip,DIRECT,no-resolve
   - RULE-SET,private,DIRECT
