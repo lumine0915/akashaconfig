@@ -50,9 +50,6 @@ tcp-concurrent: true
 keep-alive-idle: 600
 keep-alive-interval: 30
 find-process-mode: strict
-profile:
-  store-selected: true
-  store-fake-ip: true
 
 # 控制面板
 external-controller: 127.0.0.1:9090
@@ -63,6 +60,11 @@ external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/downloa
 # Hosts
 hosts:
   services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
+
+# 配置存储
+profile:
+  store-selected: true
+  store-fake-ip: true
 
 # Tun
 tun:
