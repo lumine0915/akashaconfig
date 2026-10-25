@@ -32,11 +32,11 @@ proxies:
 # 端口配置
 mixed-port: 7890
 
-# 局域网共享和用户验证
+# 局域网连接与用户验证
 allow-lan: true
 bind-address: "*"
 authentication:
-  - "akasha:void"
+  - "akasha:void"  # 用户名:密码, 若启用局域网连接请务必修改
 skip-auth-prefixes:
   - 127.0.0.1/8
   - ::1/128
@@ -53,7 +53,7 @@ find-process-mode: strict
 
 # 控制面板
 external-controller: 127.0.0.1:9090
-secret: ""
+secret: ""  # 软路由使用请务必在此处设置面板访问密码
 external-ui: ui
 external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
 
