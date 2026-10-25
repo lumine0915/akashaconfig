@@ -89,6 +89,7 @@ sniffer:
     - "Mijia Cloud"
     - "+.push.apple.com"
     - "dlg.io.mi.com"
+    - "+.miwifi.com"
     - "+.oray.com"
     - "+.sunlogin.net"
 
