@@ -203,7 +203,7 @@ rules:
 
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,apple_ip,Apple,no-resolve
-  - RULE-SET,meta_ip,Meta
+  - RULE-SET,meta_ip,Meta,no-resolve
   - RULE-SET,telegram_ip,默认代理,no-resolve
   - RULE-SET,netflix_ip,Netflix,no-resolve
 
