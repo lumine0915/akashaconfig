@@ -144,6 +144,7 @@ proxy-groups:
   - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png'}
   - {name: Microsoft, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Microsoft.png'}
   - {name: Apple, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple_2.png'}
+  - {name: Meta, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Icons/png/Meta.png'}
   - {name: Games, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Game.png'}
   - {name: Emby, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Emby.png'}
   - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png'}
@@ -182,8 +183,8 @@ rules:
   - RULE-SET,googlefcm,FCM
   - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
+  - RULE-SET,meta,Meta
   - RULE-SET,ai,AI
-  - RULE-SET,meta,AI
   - RULE-SET,github,默认代理
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple,Apple
@@ -202,6 +203,7 @@ rules:
 
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,apple_ip,Apple,no-resolve
+  - RULE-SET,meta_ip,Meta
   - RULE-SET,telegram_ip,默认代理,no-resolve
   - RULE-SET,netflix_ip,Netflix,no-resolve
 
@@ -246,6 +248,7 @@ rule-providers:
   private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.mrs"}
   google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs"}
+  meta_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/facebook.mrs"}
   netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs"}
   telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/telegram.mrs"}
 
