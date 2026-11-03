@@ -100,8 +100,8 @@ hosts:
   cloudflare-dns.com: [1.1.1.1, 1.0.0.1]
 
 # DNS通用配置
-a_defaultDNS: &a_defaultDNS ["119.29.29.29", "223.5.5.5"]
-a_chinaDNS: &a_chinaDNS ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
+a_defaultDNS: &a_defaultDNS ["119.29.29.29#DIRECT", "223.5.5.5#DIRECT"]
+a_chinaDNS: &a_chinaDNS ["https://doh.pub/dns-query#DIRECT", "https://dns.alidns.com/dns-query#DIRECT"]
 a_foreignDNS: &a_foreignDNS ["https://dns.google/dns-query#默认代理", "https://cloudflare-dns.com/dns-query#默认代理"]
 
 # DNS
