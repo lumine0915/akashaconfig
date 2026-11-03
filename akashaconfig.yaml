@@ -115,8 +115,21 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
   nameserver:
+    - "https://dns.google/dns-query#默认代理"
+    - "https://cloudflare-dns.com/dns-query#默认代理"
+  proxy-server-nameserver:
     - "https://doh.pub/dns-query"
     - "https://dns.alidns.com/dns-query"
+  direct-nameserver:
+    - "https://doh.pub/dns-query"
+    - "https://dns.alidns.com/dns-query"
+  direct-nameserver-follow-policy: true
+  nameserver-policy:
+    "rule-set:private":
+      - system
+    "rule-set:cn,apple_cn,microsoft_cn,games_cn":
+      - "https://doh.pub/dns-query"
+      - "https://dns.alidns.com/dns-query"
 
 # 策略组通用配置
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
