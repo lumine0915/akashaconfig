@@ -97,6 +97,11 @@ sniffer:
 hosts:
   services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
 
+# DNS通用配置
+a_defaultDNS: &a_defaultDNS ["119.29.29.29", "223.5.5.5"]
+a_chinaDNS: &a_chinaDNS ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"]
+a_foreignDNS: &a_foreignDNS ["https://dns.google/dns-query#默认代理", "https://cloudflare-dns.com/dns-query#默认代理"]
+
 # DNS
 dns:
   enable: true
@@ -111,25 +116,14 @@ dns:
     - "rule-set:fakeip-filter"
     - "rule-set:googlefcm"
     - "rule-set:cn"
-  default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  nameserver:
-    - "https://dns.google/dns-query#默认代理"
-    - "https://cloudflare-dns.com/dns-query#默认代理"
-  proxy-server-nameserver:
-    - "https://doh.pub/dns-query"
-    - "https://dns.alidns.com/dns-query"
-  direct-nameserver:
-    - "https://doh.pub/dns-query"
-    - "https://dns.alidns.com/dns-query"
+  default-nameserver: *a_defaultDNS
+  nameserver: *a_foreignDNS
+  proxy-server-nameserver: *a_chinaDNS
+  direct-nameserver: *a_chinaDNS
   direct-nameserver-follow-policy: true
   nameserver-policy:
-    "rule-set:private":
-      - system
-    "rule-set:cn,apple_cn,microsoft_cn,games_cn":
-      - "https://doh.pub/dns-query"
-      - "https://dns.alidns.com/dns-query"
+    "rule-set:private": 'system'
+    "rule-set:cn,apple_cn,microsoft_cn,games_cn": *a_chinaDNS
 
 # 策略组通用配置
 a_url-test: &a_url-test {type: url-test, include-all: true, exclude-type: 'direct', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, empty-fallback: REJECT, hidden: true, lazy: true}
