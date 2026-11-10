@@ -111,10 +111,10 @@ dns:
   fake-ip-range6: 2001:2::1/48
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:private"
-    - "rule-set:fakeip-filter"
-    - "rule-set:googlefcm"
-    - "rule-set:cn"
+    - rule-set:private
+    - rule-set:fakeip-filter
+    - rule-set:googlefcm
+    - rule-set:cn
   default-nameserver: *a_defaultDNS
   nameserver: *a_foreignDNS
   proxy-server-nameserver: *a_chinaDNS
