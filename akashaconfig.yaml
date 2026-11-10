@@ -2,20 +2,20 @@
 # 请在 proxy-providers 中添加订阅链接, 或在 proxies 中添加自定义节点
 
 # 订阅通用配置
-a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: "https://www.gstatic.com/generate_204", interval: 600, lazy: true}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
+a_provider: &a_provider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 600, lazy: true}, exclude-type: 'direct|reject|rematch', exclude-filter: '(?i)(群|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|电报|频道|无法|说明|提示|访问|支持|教程|关注|更新|作者|加入|超时|收藏|优惠|福利|邀请|好友|失联|选择|剩余|公益|发布|DIZTNA|通路|登录|定时|渠道|牢记|永久|余额|阁下|本站|刷新|导航|建议|重置|以下|过滤|⚠️|@|t\.me\/\+|\bexpire\b|\bhttps?:\/\/|\.com|\btraffic\b)'}
 
 # 订阅
 proxy-providers:
   Provider1:
     <<: *a_provider
-    url: "ProviderURL"
+    url: 'ProviderURL'
     override:
       additional-prefix: '[P1] '
 
   # 以下是第二个订阅的示例, 注意名称不能重复
   # Provider2:
   #   <<: *a_provider
-  #   url: "ProviderURL"
+  #   url: 'ProviderURL'
   #   override:
   #     additional-prefix: '[P2] '
 
@@ -55,7 +55,7 @@ find-process-mode: strict
 external-controller: 127.0.0.1:9090
 secret: "akashaterminal"
 external-ui: ui
-external-ui-url: "https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip"
+external-ui-url: 'https://github.com/Zephyruso/zashboard/releases/latest/download/dist.zip'
 
 # 配置存储
 profile:
@@ -97,9 +97,9 @@ hosts:
   cloudflare-dns.com: [1.1.1.1, 1.0.0.1]
 
 # DNS通用配置
-a_defaultDNS: &a_defaultDNS ["119.29.29.29#DIRECT", "223.5.5.5#DIRECT"]
-a_chinaDNS: &a_chinaDNS ["https://doh.pub/dns-query#DIRECT", "https://dns.alidns.com/dns-query#DIRECT"]
-a_foreignDNS: &a_foreignDNS ["https://dns.google/dns-query#默认代理", "https://cloudflare-dns.com/dns-query#默认代理"]
+a_defaultDNS: &a_defaultDNS ['119.29.29.29#DIRECT', '223.5.5.5#DIRECT']
+a_chinaDNS: &a_chinaDNS ['https://doh.pub/dns-query#DIRECT', 'https://dns.alidns.com/dns-query#DIRECT']
+a_foreignDNS: &a_foreignDNS ['https://dns.google/dns-query#默认代理', 'https://cloudflare-dns.com/dns-query#默认代理']
 
 # DNS
 dns:
@@ -225,40 +225,40 @@ rule-anchor:
 
 # 规则集
 rule-providers:
-  fakeip-filter: {<<: *domain, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
-  private: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs"}
-  googlefcm: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs"}
-  youtube: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs"}
-  google: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs"}
-  ai: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"}
-  meta: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/meta.mrs"}
-  github: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs"}
-  microsoft_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs"}
-  microsoft: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs"}
-  apple_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs"}
-  apple: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple.mrs"}
-  games_cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs"}
-  steam: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs"}
-  epic: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs"}
-  games_!cn: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games-!cn.mrs"}
-  emby: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-emby.mrs"}
-  tiktok: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.mrs"}
-  netflix: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/netflix.mrs"}
-  spotify: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs"}
-  telegram: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/telegram.mrs"}
-  paypal: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/paypal.mrs"}
-  binance: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs"}
-  okx: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs"}
-  usd: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs"}
+  fakeip-filter: {<<: *domain, url: 'https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs'}
+  private: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs'}
+  googlefcm: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs'}
+  youtube: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs'}
+  google: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs'}
+  ai: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs'}
+  meta: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/meta.mrs'}
+  github: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs'}
+  microsoft_cn: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs'}
+  microsoft: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs'}
+  apple_cn: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple@cn.mrs'}
+  apple: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple.mrs'}
+  games_cn: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games@cn.mrs'}
+  steam: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs'}
+  epic: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs'}
+  games_!cn: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-games-!cn.mrs'}
+  emby: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-emby.mrs'}
+  tiktok: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.mrs'}
+  netflix: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/netflix.mrs'}
+  spotify: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs'}
+  telegram: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/telegram.mrs'}
+  paypal: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/paypal.mrs'}
+  binance: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/binance.mrs'}
+  okx: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/okx.mrs'}
+  usd: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-cryptocurrency.mrs'}
 
-  private_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.mrs"}
-  google_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs"}
-  apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs"}
-  meta_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/facebook.mrs"}
-  netflix_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs"}
-  telegram_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/telegram.mrs"}
+  private_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.mrs'}
+  google_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs'}
+  apple_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs'}
+  meta_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/facebook.mrs'}
+  netflix_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs'}
+  telegram_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/telegram.mrs'}
 
-  geolocation-!cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs"}
-  cn_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs"}
+  geolocation-!cn: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-!cn.mrs'}
+  cn: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs'}
+  cn_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs'}
 
