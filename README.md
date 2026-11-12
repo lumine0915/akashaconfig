@@ -1,12 +1,54 @@
-# AkashaConfig
+# 虚空终端配置
 
-A simple configuration for "Void Terminal".
+适用于 [虚空终端](https://wiki.metacubex.one) 内核及基于虚空终端内核的客户端的配置文件。
 
-**Note**: This configuration does NOT prevent DNS leaks (as I find DNS leak prevention completely unnecessary). If you require DNS leak protection, please refer to other configurations.
+## 关于本配置
 
-**Tips:** "Void Terminal" is a nickname for a specific network software.
+本配置涵盖常用业务策略组与地区分组。经历重度强迫症级别的取舍纠结以减少无效冗余配置。采用 `rule-set` 规则集减少内存占用。分流合理精准。且配置了DNS分流以解决DNS污染。
 
-## ⚠ **WARRING**
+本配置的默认运行环境是**Linux+裸核/Android+官方客户端**, 且仅用于本机使用。配置中的**用户验证**和**控制面板访问密码**为明文！在局域网中使用本配置请务必参考下方使用说明更改密码。
 
-Please **DO NOT** share or repost this repository or any of its contents to any platforms or services located in or controlled by entities in Mainland China. Any consequences arising therefrom shall be solely borne by you and are unrelated to the original author!
+**注意**：本配置不主动处理任何“防泄漏”（如DNS泄漏、WebRTC泄漏等）相关问题。若你看到并无泄漏，那只是巧合。
+
+## 使用说明
+
+请在`proxy-providers`中添加订阅链接，随后导入客户端即可使用。
+
+### 特殊需求处理
+
+- **局域网/软路由环境**：请务必更改`authentication`和`secret`中的密码为你自己的密码。并设置`external-controller`的IP地址为`0.0.0.0`以便于登录控制面板
+
+- **订阅中有私人DNS配置**：请在DNS配置下增加如下条目：
+
+```yanl
+proxy-server-nameserver-policy: {订阅的私人DNS配置}
+```
+订阅的私人DNS配置一般在订阅YAML的`nameserver-policy`中。添加时注意缩进
+
+- **Windows裸核用户**：请注释掉`auto-redirect`
+
+## **⚠️特别声明**
+
+> [!IMPORTANT]
+> **项目边界声明**
+>
+> 本项目不提供可供用户使用的代理服务器、代理节点或节点订阅，不运营任何代理服务，也不提供网络接入服务。本项目及其维护者与上述服务提供者不存在合作、代理或担保关系。
+
+> [!WARNING]
+> 使用本项目前，请展开并完整阅读下方声明。
+
+<details>
+<summary><strong>展开查看完整使用须知与免责声明</strong></summary>
+
+<br>
+
+**使用须知：**
+
+1. 本项目仅用于 虚空终端 的技术学习与研究，相关内容属于中立性的技术实现示例与实验性资料，不涉及任何具体使用场景或用途导向。
+2. 使用者在访问、使用、复制本项目内容前，应自行确认其所在地及相关司法辖区的法律法规允许。
+3. 任何个人或组织因直接或间接使用本项目内容所实施的行为，均由其自行负责并承担相应法律责任。项目维护者不参与使用者的具体行为，对使用者的用途、方式及其产生的后果不承担任何责任，亦不承担任何形式的连带责任。
+4. 基于本项目内容所进行的修改、二次开发、整合、分发或其他衍生行为，均属于相关个人或组织的独立行为，与本项目及其维护者无关，由此产生的任何法律责任由行为主体自行承担。
+5. 任何转载、再发布或二次传播均不得暗示本项目或维护者对转载内容背书。因转载、传播或使用本项目内容所产生的法律风险，由行为主体自行承担，与本项目及其维护者无关。
+6. 本项目维护者保留在任何时间对本免责声明进行修订或补充的权利。任何使用、复制或访问本项目内容的个人或组织，均视为已知悉并接受本免责声明。
+</strong></summary></details>
 
