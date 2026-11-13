@@ -1,6 +1,6 @@
 # 虚空终端配置
 
-适用于 [虚空终端](https://wiki.metacubex.one) 内核及使用虚空终端内核的客户端的配置文件。
+适用于 [虚空终端](https://wiki.metacubex.one) 内核及使用虚空终端内核的客户端的配置文件
 
 ## 关于本配置
 
@@ -16,7 +16,7 @@
 
 - **局域网/软路由环境**
 
-请**务必更改`authentication`和`secret`中的密码为你自己的密码**。并设置`external-controller`的IP地址为`0.0.0.0`以便于登录控制面板
+请**务必更改`authentication`和`secret`中的密码为你自己的密码**。并设置`external-controller`的IP地址为`0.0.0.0:9090`以便于访问控制面板
 
 - **订阅中有私人DNS配置**
 
