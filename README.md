@@ -16,7 +16,7 @@
 
 - **局域网/软路由环境**
 
-请**务必更改`authentication`和`secret`中的密码为你自己的密码**。并设置`external-controller`的IP地址为`0.0.0.0:9090`以便于访问控制面板
+请**务必更改`authentication`和`secret`中的密码为你自己的密码**。并设置`external-controller`的IP地址为`0.0.0.0:9090`以便于访问控制面板。
 
 - **订阅中有私人DNS配置**
 
@@ -26,11 +26,11 @@
 proxy-server-nameserver-policy: {订阅的私人DNS配置}
 ```
 
-订阅的私人DNS配置一般在订阅YAML的`nameserver-policy`中。添加时注意缩进
+订阅的私人DNS配置一般在订阅YAML的`nameserver-policy`中。添加时注意缩进。
 
 - **Windows裸核运行**
 
-请注释掉`auto-redirect`
+请注释掉`auto-redirect`。
 
 ## **⚠️特别声明**
 
