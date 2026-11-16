@@ -28,9 +28,9 @@ proxy-server-nameserver-policy: {订阅的私人DNS配置}
 
 订阅的私人DNS配置一般在订阅YAML的`nameserver-policy`中。添加时注意缩进。
 
-- **Windows裸核运行**
+- **Windows 用户**
 
-请注释掉`auto-redirect`。
+为避免DNS污染，如果没有虚拟机等特殊需求，请开启 [严格路由](https://wiki.metacubex.one/config/inbound/tun/#strict-route) 。
 
 ## **⚠️特别声明**
 
