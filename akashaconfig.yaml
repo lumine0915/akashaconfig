@@ -144,38 +144,38 @@ a_filterLO: &a_filterLO '^(?i).*(0\.01|0\.[1-8]|下载|实验).*$'
 
 # 策略组
 proxy-groups:
-  - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Proxy.png'}
-  - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/YouTube.png'}
-  - {name: Google, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Google_Search.png'}
-  - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/AI.png'}
-  - {name: Microsoft, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Microsoft.png'}
-  - {name: Apple, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Apple_2.png'}
-  - {name: Meta, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Icons/png/Meta.png'}
-  - {name: Games, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Game.png'}
-  - {name: Emby, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Emby.png'}
-  - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/TikTok.png'}
-  - {name: Netflix, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Netflix.png'}
-  - {name: Spotify, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Spotify.png'}
-  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Cryptocurrency.png'}
-  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_switch, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available.png'}
-  - {name: 漏网之鱼, type: select, proxies: *a_switch, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Final.png'}
+  - {name: 默认代理, type: select, proxies: *a_base, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Proxy.svg'}
+  - {name: YouTube, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/YouTube.svg'}
+  - {name: Google, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Google.svg'}
+  - {name: AI, type: select, default-selected: '美国', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/AI.svg'}
+  - {name: Microsoft, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Microsoft.svg'}
+  - {name: Apple, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Apple(2).svg'}
+  - {name: Meta, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Meta.svg'}
+  - {name: Games, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Game.svg'}
+  - {name: Emby, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Emby.svg'}
+  - {name: TikTok, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/TikTok.svg'}
+  - {name: Netflix, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Netflix.svg'}
+  - {name: Spotify, type: select, proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Spotify.svg'}
+  - {name: Wallet, type: select, default-selected: '日本', proxies: *a_oversea, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Cryptocurrency.svg'}
+  - {name: FCM, type: select, default-selected: 'DIRECT', proxies: *a_switch, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/FCM.svg'}
+  - {name: 漏网之鱼, type: select, proxies: *a_switch, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Final.svg'}
 
   # 以下是地区分组
-  - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Hong_Kong.png'}
+  - {name: 香港, <<: *a_select, filter: *a_filterHK, proxies: [香港自动], icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/flag/Hong_Kong.svg'}
   - {name: 香港自动, <<: *a_url-test, filter: *a_filterHK}
-  - {name: 台湾, <<: *a_select, filter: *a_filterTW, proxies: [台湾自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Taiwan.png'}
+  - {name: 台湾, <<: *a_select, filter: *a_filterTW, proxies: [台湾自动], icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/flag/China_Taiwan.svg'}
   - {name: 台湾自动, <<: *a_url-test, filter: *a_filterTW}
-  - {name: 日本, <<: *a_select, filter: *a_filterJP, proxies: [日本自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Japan.png'}
+  - {name: 日本, <<: *a_select, filter: *a_filterJP, proxies: [日本自动], icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/flag/Japan.svg'}
   - {name: 日本自动, <<: *a_url-test, filter: *a_filterJP}
-  - {name: 新加坡, <<: *a_select, filter: *a_filterSG, proxies: [新加坡自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Singapore.png'}
+  - {name: 新加坡, <<: *a_select, filter: *a_filterSG, proxies: [新加坡自动], icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/flag/Singapore.svg'}
   - {name: 新加坡自动, <<: *a_url-test, filter: *a_filterSG}
-  - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动], icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/United_States.png'}
+  - {name: 美国, <<: *a_select, filter: *a_filterUS, proxies: [美国自动], icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/flag/United_States.svg'}
   - {name: 美国自动, <<: *a_url-test, filter: *a_filterUS}
-  - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/World_Map.png'}
-  - {name: 高倍率, <<: *a_select, filter: *a_filterHI, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/VIP.png'}
-  - {name: 低倍率, <<: *a_select, filter: *a_filterLO, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Available_1.png'}
-  - {name: 全球自动, <<: *a_url-test, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Auto.png'}
-  - {name: 全球手动, <<: *a_select, icon: 'https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Global.png'}
+  - {name: 其他地区, <<: *a_select, exclude-filter: *a_filterOT, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/WorldMap.svg'}
+  - {name: 高倍率, <<: *a_select, filter: *a_filterHI, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/VIP.svg'}
+  - {name: 低倍率, <<: *a_select, filter: *a_filterLO, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Available(1).svg'}
+  - {name: 全球自动, <<: *a_url-test, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Auto.svg'}
+  - {name: 全球手动, <<: *a_select, icon: 'https://raw.githubusercontent.com/aaANDkk/Qure_Style_SVG/main/icon/svg/common/Global.svg'}
 
 # 路由规则
 rules:
