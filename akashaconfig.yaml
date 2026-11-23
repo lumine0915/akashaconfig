@@ -195,6 +195,7 @@ rules:
   - RULE-SET,microsoft,Microsoft
   - RULE-SET,apple,Apple
   - RULE-SET,telegram,默认代理
+  - RULE-SET,twitter,默认代理
   - RULE-SET,steam,Games
   - RULE-SET,epic,Games
   - RULE-SET,games_!cn,Games
@@ -211,6 +212,7 @@ rules:
   - RULE-SET,apple_ip,Apple
   - RULE-SET,meta_ip,Meta
   - RULE-SET,telegram_ip,默认代理
+  - RULE-SET,twitter_ip,默认代理
   - RULE-SET,netflix_ip,Netflix
 
   - RULE-SET,geolocation-!cn,默认代理
@@ -232,6 +234,7 @@ rule-providers:
   google: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs'}
   ai: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-!cn.mrs'}
   meta: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/meta.mrs'}
+  twitter: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/twitter.mrs'}
   github: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs'}
   microsoft_cn: {<<: *domain, url: 'https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/microsoft@cn.mrs'}
   microsoft: {<<: *domain, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs'}
@@ -255,6 +258,7 @@ rule-providers:
   google_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs'}
   apple_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs'}
   meta_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/facebook.mrs'}
+  twitter_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/twitter.mrs'}
   netflix_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs'}
   telegram_ip: {<<: *ip, url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/telegram.mrs'}
 
