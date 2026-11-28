@@ -92,9 +92,11 @@ sniffer:
 
 # Hosts
 hosts:
-  services.googleapis.cn: services.googleapis.com  # 解决谷歌商店无法下载的问题
   dns.google: [8.8.8.8, 8.8.4.4]
   cloudflare-dns.com: [1.1.1.1, 1.0.0.1]
+
+  # 解决谷歌商店无法下载的问题
+  services.googleapis.cn: services.googleapis.com
 
 # DNS通用配置
 a_defaultDNS: &a_defaultDNS ['119.29.29.29#DIRECT', '223.5.5.5#DIRECT']
